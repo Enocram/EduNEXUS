@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0f1c">
+  <meta name="description" content="EduNEXUS - Ecossistema futurista de produtos educacionais, acessíveis e humanizados.">
+  <meta name="network-status" content="online">
+  <title>EduNEXUS | Plataforma Educacional High-Tech</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/png" href="/assets/icons/icon-192.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
+  <link rel="stylesheet" href="/css/accessibility.css">
+</head>
+<body class="dark-theme">
+  <div id="splashScreen" class="splash-screen">
+    <div class="hologram-logo">
+      <i class="fas fa-brain"></i>
+      <span class="glow-text">EduNEXUS</span>
+    </div>
+    <div class="neon-loader"></div>
+    <div class="splash-scanner"></div>
+    <p class="splash-sub">carregando ecossistema <span class="dot-anim">...</span></p>
+  </div>
+
+  <div id="app" style="display: none;">
+    <header class="glass-header">
+      <div class="logo-area">
+        <i class="fas fa-microchip"></i>
+        <span>EduNEXUS<span class="ai-badge">AI</span></span>
+      </div>
+      <div class="header-actions">
+        <button id="quickAccessBtn" class="icon-btn" aria-label="Acessibilidade rápida"><i class="fas fa-universal-access"></i></button>
+        <button id="themeToggleHeader" class="icon-btn" aria-label="Alternar tema"><i class="fas fa-moon"></i></button>
+        <button id="adminPanelBtn" class="icon-btn" aria-label="Admin"><i class="fas fa-crown"></i></button>
+        <button id="userMenuBtn" class="icon-btn" aria-label="Perfil"><i class="fas fa-user-astronaut"></i></button>
+        <button id="loginBtn" class="icon-btn" aria-label="Login" style="display: none;"><i class="fas fa-sign-in-alt"></i></button>
+        <button id="logoutBtn" class="icon-btn" aria-label="Logout" style="display: none;"><i class="fas fa-sign-out-alt"></i></button>
+      </div>
+    </header>
+
+    <nav class="bottom-nav" aria-label="Navegação principal">
+      <button data-route="dashboard" class="nav-item active"><i class="fas fa-chart-line"></i><span>Início</span></button>
+      <button data-route="apps" class="nav-item"><i class="fas fa-cube"></i><span>Apps</span></button>
+      <button data-route="courses" class="nav-item"><i class="fas fa-graduation-cap"></i><span>Cursos</span></button>
+      <button data-route="contact" class="nav-item"><i class="fas fa-headset"></i><span>Central</span></button>
+      <button data-route="profile" class="nav-item"><i class="fas fa-user"></i><span>Perfil</span></button>
+    </nav>
+
+    <main id="page-container" class="main-content" role="main"></main>
+
+    <div id="screenReaderFab" class="sr-fab" aria-label="Controle do leitor de tela">
+      <i class="fas fa-ear-listen"></i>
+    </div>
+    <div id="srPanel" class="sr-panel glass-panel" style="display: none;">
+      <div class="sr-header"><span>Leitor de Tela <i class="fas fa-robot"></i></span><button id="closeSrPanel"><i class="fas fa-times"></i></button></div>
+      <div class="sr-controls">
+        <button id="srPlayBtn" class="sr-btn"><i class="fas fa-play"></i> Iniciar</button>
+        <button id="srPauseBtn" class="sr-btn"><i class="fas fa-pause"></i> Pausar</button>
+        <button id="srResumeBtn" class="sr-btn"><i class="fas fa-forward"></i> Continuar</button>
+        <div class="sr-speed"><label>Velocidade</label><input type="range" id="srSpeed" min="0.5" max="2" step="0.1" value="1"></div>
+      </div>
+    </div>
+  </div>
+  <!-- SDK do Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+
+  <!-- Configuração das credenciais -->
+<script>
+    window.SUPABASE_URL = 'https://kelasyuvthoueclhiiqs.supabase.co';   // ← substitua pela sua URL
+    window.SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtlbGFzeXV2dGhvdWVjbGhpaXFzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAzMjMxOTcsImV4cCI6MjA5NTg5OTE5N30.i8qjR9yDlpC2xzgWz1VQjm9ht-Hj0aRiGy1rUOtYyFA';      // ← substitua pela sua chave anônima
+</script>
+
+  <!-- Nosso módulo de integração Supabase -->
+<script src="/js/supabase.js"></script>
+  <!-- Primeiro os utilitários e banco de dados -->
+<script src="/js/utils/sanitize.js"></script>
+<script src="/js/utils/errorHandler.js"></script>
+<script src="/js/utils/validation.js"></script>
+<script src="/js/native.js"></script> 
+
+<script src="/js/db.js"></script>
+<script src="/js/database.js"></script>
+<script src="/js/store.js"></script>
+<script src="/js/migration.js"></script>
+
+<script src="/js/offline.js"></script>
+<script src="/js/lazy.js"></script>
+<script src="/js/data.js"></script>
+<script src="/js/settings.js"></script>
+<script src="/js/screenreader.js"></script>
+<script src="/js/personality.js"></script>
+<script src="/js/eduInsights.js"></script>
+<script src="/js/animations.js"></script>
+<script src="/js/recommendations.js"></script>
+<script src="/js/accessibility.js"></script>
+
+<!-- Router e App por último -->
+<script src="/js/router.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>
