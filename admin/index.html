@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>EduNEXUS Admin | Painel de Controle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body class="dark-theme admin-body">
+  <div id="adminApp">
+    <!-- Tela de login -->
+    <div id="loginScreen" class="admin-login">
+      <div class="login-card glass-panel">
+        <div class="login-logo">
+          <i class="fas fa-crown"></i>
+          <span>EduNEXUS<span class="ai-badge">ADMIN</span></span>
+        </div>
+        <h2>Acesso Restrito</h2>
+        <input type="password" id="adminPassword" class="input-futurist" placeholder="Senha administrativa">
+        <button id="loginBtn" class="btn-neon">Entrar</button>
+        <p class="login-hint">Demonstração: digite <strong>admin123</strong></p>
+      </div>
+    </div>
+
+    <!-- Dashboard administrativo (oculto até login) -->
+    <div id="adminDashboard" style="display: none;">
+      <nav class="admin-nav glass-header">
+        <div class="logo-area"><i class="fas fa-microchip"></i> Admin Nexus</div>
+        <div class="admin-nav-links">
+          <a href="#" class="nav-btn" style="background: var(--neon-cyan); color: #000;" onclick="window.location.href = '/'; setTimeout(() => location.reload(), 100);">← Voltar ao App</a>
+          <button data-section="dashboard" class="nav-btn active"><i class="fas fa-chart-line"></i> Dashboard</button>
+          <button data-section="apps" class="nav-btn"><i class="fas fa-cube"></i> Apps</button>
+          <button data-section="courses" class="nav-btn"><i class="fas fa-graduation-cap"></i> Cursos</button>
+          <button data-section="categories" class="nav-btn"><i class="fas fa-tags"></i> Categorias</button>
+          <button id="logoutBtn" class="nav-btn"><i class="fas fa-sign-out-alt"></i> Sair</button>
+        </div>
+      </nav>
+
+      <main class="admin-main" id="adminContent">
+        <!-- Conteúdo dinâmico -->
+      </main>
+    </div>
+  </div>
+  <!-- SDK do Supabase (CDN oficial) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+
+  <!-- Configuração das credenciais (use as mesmas do app principal) -->
+  <script>
+    window.SUPABASE_URL = 'https://kelasyuvthoueclhiiqs.supabase.co';   // ← substitua pela sua URL
+    window.SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtlbGFzeXV2dGhvdWVjbGhpaXFzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAzMjMxOTcsImV4cCI6MjA5NTg5OTE5N30.i8qjR9yDlpC2xzgWz1VQjm9ht-Hj0aRiGy1rUOtYyFA';      // ← substitua pela sua chave anônima
+  </script>
+
+  <!-- Nosso módulo de integração Supabase -->
+  <script src="/js/supabase.js"></script>
+
+  <script src="/js/database.js"></script>
+  <script src="/admin/admin.js"></script>
+</body>
+</html>

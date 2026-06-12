@@ -1,0 +1,21 @@
+{
+  "name": "EduNexus Educacional",
+  "short_name": "EduNexus",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0a0f1c",
+  "background_color": "#020408",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
