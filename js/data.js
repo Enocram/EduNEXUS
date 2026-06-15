@@ -17,7 +17,7 @@ const defaultApps = [
     version: "2.1.0",
     changelog: "Adicionado suporte a leitura de tela e novos desafios.",
     badge: "Novo",
-    url: "https://enocram.github.io/LabEscritaIA/",
+    url: "https://marconearruda.github.io/LabEscritaIA/",
     favorite: false,
     insights: [
     "✍️ O LabEscrita pode ajudar a transformar ideias em textos mais organizados e estruturados.",
@@ -149,7 +149,7 @@ const defaultApps = [
     version: "1.2.0",
     changelog: "Layout para para todos os dispositivos.",
     badge: "Novo",
-    url: "https://enocram.github.io/SYNCORE/",
+    url: "https://marconearruda.github.io/SYNCORE/",
     favorite: false
   }
 ];
